@@ -9,13 +9,13 @@ export const store = new Vuex.Store({
     state: {
         news: [],
         jobs: [],
-        asks: [],
+        ask: [],
         users: {},
         item: [],
     },
     getters: {
       fetchedAsk(state) {
-          return state.asks
+          return state.ask
       },
       fetchedItem(state) {
           return state.item
