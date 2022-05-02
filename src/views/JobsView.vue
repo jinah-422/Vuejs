@@ -1,11 +1,25 @@
 <template>
   <div>
-      <p v-for="job in this.$store.state.jobs">
-        <a v-bind:href="job.url">
-          {{ job.title }}
-        </a>
-        <small>{{ job.time_ago }} | from. {{ job.domain }}</small>
-      </p>
+    <ul class="jobs-list">
+      <li v-for="job in this.$store.state.jobs" class="post">
+        <div class="point">
+          {{ job.points || 0}} .
+        </div>
+
+        <div>
+          <a v-bind:href="job.url" class="job-title">
+            {{ job.title }}
+          </a>
+          </br>
+
+          <small class="link-text">{{ job.time_ago }} | from. 
+            <a v-bind:href="job.url">
+              {{ job.domain }}
+            </a>
+          </small>
+        </div>
+      </li>
+    </ul>
       
   </div>
 </template>
@@ -38,6 +52,38 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.jobs-list {
+  padding: 0;
+}
+
+.post {
+  list-style: none; /* black point 제거 */ 
+  align-items: center;
+  display: flex;
+  border-bottom: 2.5px solid #eee;
+}
+
+.point {
+  width: 80px;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #42b883;
+  font-size: medium;
+  font-family: fantasy;
+}
+
+.job-title {
+  margin: 0;
+}
+
+.link-text {
+  font-style: italic;
+  color: #828282;
+}
+
+
 
 </style>

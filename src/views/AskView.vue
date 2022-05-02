@@ -1,18 +1,24 @@
 <template>
   <div>
-      <p v-for="item in fetchedAsk">
-        <!-- <a v-bine:href="ask.url">
-          {{ ask.title }}
-        </a> -->
+    <ul class="ask-list">
+      <li v-for="item in fetchedAsk" class="post">
+        <div class="point">
+          {{ item.points }} .
+        </div>
 
-        <router-link v-bind:to="`item/${item.id}`">
-          {{ item.title }}
-        </router-link>
+        <div>
+         <router-link v-bind:to="`item/${item.id}`" class="ask-title">
+           {{ item.title }}
+         </router-link>
+        </br>
 
-        <small class="small">{{ item.time_ago }} | by. 
-          <router-link v-bind:to="`/user/${item.user}`">{{ item.user }}</router-link>
-        </small>
-      </p>
+         <small class="link-text">{{ item.time_ago }} | by. 
+           <router-link v-bind:to="`/user/${item.user}`">{{ item.user }}</router-link>
+         </small>
+        </div>
+        
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -58,8 +64,36 @@ export default {
 }
 </script>
 
-<style>
-.small {
-  font-style: italic;
+<style scoped>
+.ask-list {
+  padding: 0;
 }
+
+.post {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 2.5px solid #eee;
+}
+
+.point {
+  width: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #42b883;
+  font-size: medium;
+  font-family: fantasy;
+}
+
+.ask-title {
+  margin: 0;
+}
+
+.link-text {
+  font-style: italic;
+  color: #828282;
+}
+
 </style>

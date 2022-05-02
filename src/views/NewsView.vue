@@ -73,6 +73,7 @@ export default {
 }
 
 .user-text {
+  font-style: italic;
   color: #828282;
 }
 
