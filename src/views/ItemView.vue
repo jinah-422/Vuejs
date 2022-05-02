@@ -24,6 +24,9 @@
     
     <section>
     <!-- 질문 댓글 section-->
+      <div v-html="fetchedItem.content">
+        <!-- {{ fetchedItem.content }} -->
+      </div>
     </section>
   </div>
 </template>
@@ -48,8 +51,7 @@ export default {
 .user-container {
   display: flex;
   align-items: center;
-  padding-left: 5px;
-  padding-top: 5px;
+  padding : 0.6rem;
 }
 
 /* 아이콘 */
