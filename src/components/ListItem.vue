@@ -1,5 +1,8 @@
 <template>
   <div>
+
+    <!-- *** JobsView, AskView, NewsView의 로직들을 공통 컴포넌트화 시키는 코드 *** -->
+
     <ul class="item-list">
       <li v-for="item in ListItems" class="post"> <!-- 각각의 list item들 class="post" -->
         <div class="point">
@@ -27,15 +30,20 @@
           <small class="link-text">{{ item.time_ago }}
                         
           <!-- case1. by.~~ 가 user일 때 -->
-          <template v-if="item.user">
+          <!-- <template v-if="item.user">
               <router-link v-bind:to="`/user/${item.user}`" class="link-text"> | by. {{ item.user }}</router-link>
-          </template>
+          </template> -->
 
           <!-- case2. by.~~가 domain일 때 -->
-          <template v-else>
+          <!-- <template v-else>
               <a v-bind:href="item.url"> | from. {{ item.domain }} </a>
-          </template>
+          </template> -->
 
+        <!-- case1. by.~~ 가 user일 때 -->
+        <router-link v-if="item.user" v-bind:to="`/user/${item.user}`" class="link-text"> | by. {{ item.user }}</router-link>
+
+        <!-- case2. by.~~가 domain일 때 -->
+        <a v-else v-bind:href="item.url"> | from. {{ item.domain }} </a>
           
           </small>
         </div>

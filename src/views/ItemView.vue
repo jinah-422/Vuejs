@@ -1,31 +1,26 @@
 <template>
   <div>
     <section>
-    <!-- 질문 상세정보 section -->
-      <div class="user-container">
-        <div class="fa-user">
-          <i class="fa-solid fa-user-large"></i>
-        </div>
+      <user-profile :info="fetchedItem">
+        <!-- <div slot="username">{{ fetchedItem.user }}</div> -->
+        <router-link slot="username" :to="`/user/${fetchedItem.user}`">
+          {{ fetchedItem.user }}
+        </router-link>
+        <template slot="time">{{ 'Posted '+fetchedItem.time_ago }}</template>
 
-        <div class="user-description">
-          <router-link v-bind:to="`/user/${fetchedItem.user}`">
-            {{ fetchedItem.user }}
-          </router-link>
+      </user-profile>
 
-          <div class="time">
-            {{ fetchedItem.time_ago }}
-          </div>
-
-        </div>
-      </div>
-
-       <h2>{{ fetchedItem.title }}</h2>
     </section>
+      
+    <section>
+      <h2>{{ fetchedItem.title }}</h2>
+    </section>
+    
     
     <section>
     <!-- 질문 댓글 section-->
       <div v-html="fetchedItem.content">
-        <!-- {{ fetchedItem.content }} -->
+
       </div>
     </section>
   </div>
@@ -33,8 +28,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import UserProfile from '../components/UserProfile.vue';
 
 export default {
+  components: { UserProfile },
   computed: {
     ...mapGetters(['fetchedItem'])
   },
@@ -47,7 +44,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .user-container {
   display: flex;
   align-items: center;
