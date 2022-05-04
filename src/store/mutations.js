@@ -1,11 +1,10 @@
 export default {
-    SET_NEWS(state, data) {
-        state.news = data;
+    SET_NEWS(state, news) {
+        state.news = news;
     },
-    SET_ASK(state, data) {
-        state.ask = data;
+    SET_JOBS(state, jobs) {
+        state.jobs = jobs;
     },
-<<<<<<< HEAD
     SET_ASKS(state, ask) {
         state.ask = ask;
     },
@@ -17,9 +16,6 @@ export default {
     },
     SET_LIST(state, list) {
         state.list = list;
-=======
-    SET_JOBS(state, data) {
-        state.jobs = data;
->>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
     }
+
 }

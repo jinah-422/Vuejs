@@ -1,17 +1,15 @@
 <template>
   <div>
-    <p v-for="news in this.$store.state.news">
-        <a href="news.url" >
-            {{ news.title }}
-        </a>
-    </p>
+    <list-item></list-item>
+    <!-- 로직 listitem component로 내려감 -->
   </div>
 </template>
 
 <script>
+import ListItem from '../components/ListItem.vue'
+import bus from '../utils/bus.js'
 
 export default {
-<<<<<<< HEAD
   components: { 
     ListItem,
   },
@@ -44,20 +42,9 @@ export default {
     
     
   }
-=======
-    created() {
-        this.$store.dispatch('FETCH_NEWS')
-        .then(() => console.log('success'))
-        .catch(() => console.log('fail'))        
-    }
-
->>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
 }
 </script>
 
 <style>
-a {
-    text-decoration-line: none;
-}
 
 </style>

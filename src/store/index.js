@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import Vuex from 'vuex'
+import Vuex from 'vuex';
+import mutations from './mutations.js';
 import actions from './actions.js'
-import mutations from './mutations.js'
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
         news: [],
+        jobs: [],
         ask: [],
-<<<<<<< HEAD
         users: {}, 
         item: {},
         list: []
@@ -21,12 +21,7 @@ export const store = new Vuex.Store({
       fetchedItem(state) {
           return state.item
       }  
-=======
-        jobs: []
->>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
     },
-  
     mutations: mutations,
     actions: actions
-
 })

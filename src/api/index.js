@@ -1,17 +1,14 @@
 import axios from "axios";
 
-<<<<<<< HEAD
 // 1. HTTP Request&Response관련 기본 설정 
-=======
->>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
 const config = {
     baseUrl: 'https://api.hnpwa.com/v0/'
-    // 공통으로 들어가는 url
 }
 
-// Action에서 호출할 함수들 정리
+// 2. API 함수 정리
 function fetchNewsList() {
     return axios.get(`${config.baseUrl}news/1.json`);
+    // return axios.get(config.baseUrl + 'news/1.json');
 }
 
 function fetchAskList() {
@@ -19,7 +16,19 @@ function fetchAskList() {
 }
 
 function fetchJobsList() {
-    return axios.get(`${config.baseUrl}jobs/1.json`)
+    return axios.get(`${config.baseUrl}jobs/1.json`);
 }
 
-export {fetchNewsList, fetchAskList, fetchJobsList}
+function fetchList(pageName) {
+    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+}
+
+function fetchUserName(username) {
+    return axios.get(`${config.baseUrl}user/${username}.json`);
+}
+
+function fetchComment(id) {
+    return axios.get(`${config.baseUrl}item/${id}.json`);
+}
+
+export { fetchNewsList, fetchAskList, fetchJobsList, fetchList, fetchUserName, fetchComment }
