@@ -23,4 +23,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
- 나는 김진아다!
+ 나는 김진아다!# Vuejs_review
