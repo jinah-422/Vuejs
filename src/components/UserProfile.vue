@@ -26,7 +26,7 @@
             </slot>
             <!-- {{ info.created }} -->
         </div>
-    </div>
+    </div> 
   </div>
 
 </template>

@@ -20,7 +20,7 @@ export default function createListView(name) {
               .catch((error) => {
                 console.log(error)
               })
-            }, 1500);
+            }, 1500); 
 
         },
 

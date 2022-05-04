@@ -20,7 +20,7 @@ export default {
   components: {
     UserProfile
   },
-  computed: {
+  computed: { 
     userInfo() {
       return this.$store.state.users;
     }

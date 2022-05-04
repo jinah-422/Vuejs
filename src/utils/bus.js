@@ -1,4 +1,4 @@
 import Vue from 'vue';
 
-// bus.js
+// bus.js 
 export default new Vue();

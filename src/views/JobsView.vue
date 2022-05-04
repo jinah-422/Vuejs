@@ -19,7 +19,7 @@ export default {
   // // 지연 test
   // setTimeout(() => {
   //   this.$store.dispatch('FETCH_JOBS')
-  //   .then(() => {
+  //   .then(() => { 
   //     console.log('fetched !- spinner:end')
   //     bus.$emit('end:spinner');
   //   })

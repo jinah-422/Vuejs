@@ -15,7 +15,7 @@ export default {
     ListItem
   },
   created() {
-  // bus.$emit('start:spinner');
+  // bus.$emit('start:spinner'); 
 
   // // 지연 test
   // setTimeout(() => {

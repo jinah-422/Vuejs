@@ -71,7 +71,7 @@ export default {
         return this.$store.state.list;
       }
 
-        // ListItems() {
+        // ListItems() { 
         //     const name = this.$route.name;
         //     if(name === 'news'){
         //         return this.$store.state.news;

@@ -40,7 +40,7 @@ export default {
         .then(({data}) => {
             commit('SET_USERS', data)
         })
-        .catch(error => {
+        .catch(error => { 
             console.log(error)
         })
     },

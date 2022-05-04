@@ -14,10 +14,11 @@ export default {
     ListItem,
   },
   created() {
+  
     // bus.$emit('start:spinner');
 
     // // 지연 test
-    // setTimeout(() => {
+    // setTimeout(() => { 
     //   this.$store.dispatch('FETCH_NEWS')
     //   .then(() => {
     //     console.log('fetched !- spinner:end')

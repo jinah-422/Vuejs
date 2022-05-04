@@ -16,7 +16,7 @@
       <h2>{{ fetchedItem.title }}</h2>
     </section>
     
-    
+     
     <section>
     <!-- 질문 댓글 section-->
       <div v-html="fetchedItem.content">

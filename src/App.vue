@@ -19,7 +19,7 @@ export default {
     Spinner
   },
   methods: {
-    startSpinner() {
+    startSpinner() { 
       this.loadingStatus = true;
     },
     endSpinner() {

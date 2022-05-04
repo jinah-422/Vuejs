@@ -9,7 +9,7 @@ export default {
         state.ask = ask;
     },
     SET_USERS(state, users) {
-        state.users = users;
+        state.users = users; 
     },
     SET_ITEM(state, item) {
         state.item = item;
