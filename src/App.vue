@@ -4,17 +4,43 @@
     <transition name="fade">
     <router-view></router-view> <!-- url에 따라 다르게 뿌려지는 page component영역 -->
     </transition>
+    <spinner v-bind:loading="loadingStatus"></spinner>
   </div>
 </template>
 
 <script>
 import ToolBar from './components/ToolBar.vue'
+import Spinner from '../src/components/Spinner.vue'
+import bus from './utils/bus.js'
 
 export default {
-components: {
-  ToolBar
-}
-
+  components: {
+    ToolBar,
+    Spinner
+  },
+  methods: {
+    startSpinner() {
+      this.loadingStatus = true;
+    },
+    endSpinner() {
+      this.loadingStatus = false;
+    }
+  },
+  data() {
+    return {
+      loadingStatus: false,
+    }
+  },
+  created() {
+    bus.$on('start:spinner', this.startSpinner) 
+    bus.$on('end:spinner', this.endSpinner)
+    // event지정 ('event name', callback) -> 하위 component에서 bus.$emit으로 event호출 ( emit이 이벤트발생, 상위component에서 on으로 처리 )
+  },
+  beforeDestory() {
+    bus.$off('start:spinner', this.startSpinner)
+    bus.$off('end:spinner', this.endSpinner)
+  }
+  
 }
 </script>
 
