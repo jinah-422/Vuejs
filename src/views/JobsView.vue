@@ -1,21 +1,13 @@
 <template>
   <div>
-   <list-item></list-item>
-   <!-- 로직 listitem component로 내려감 -->
+      JobsView
   </div>
 </template>
 
 <script>
-import ListItem from '../components/ListItem.vue'
-import bus from '../utils/bus.js'
-
 export default {
-  components: { 
-    ListItem 
-  },
-  created() {
-  // bus.$emit('start:spinner');
 
+<<<<<<< HEAD
   // // 지연 test
   // setTimeout(() => {
   //   this.$store.dispatch('FETCH_JOBS')
@@ -38,6 +30,8 @@ export default {
   //     console.log(error)
   //   })
   }
+=======
+>>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
 }
 </script>
 

@@ -2,19 +2,17 @@
   <div id="app">
     <tool-bar></tool-bar>
     <transition name="fade">
-    <router-view></router-view> <!-- url에 따라 다르게 뿌려지는 page component영역 -->
+      <router-view></router-view>
     </transition>
-    <spinner v-bind:loading="loadingStatus"></spinner>
   </div>
 </template>
 
 <script>
 import ToolBar from './components/ToolBar.vue'
-import Spinner from '../src/components/Spinner.vue'
-import bus from './utils/bus.js'
 
 export default {
   components: {
+<<<<<<< HEAD
     ToolBar,
     Spinner
   },
@@ -39,33 +37,36 @@ export default {
   beforeDestory() {
     bus.$off('start:spinner', this.startSpinner)
     bus.$off('end:spinner', this.endSpinner)
+=======
+    ToolBar
+>>>>>>> 8ac346355a0a2d9ceba259ff0b6b662266193670
   }
-  
+
 }
 </script>
 
-
-<style>
-body {
+<style scoped>
+body{
   padding: 0;
   margin: 0;
-}
-
-/* 링크에 커서가 올라갔을 때 */
-a:hover {
-  color: #42b883;
 }
 
 a {
   color: #34495e;
   text-decoration: none;
+  text-decoration-line: none;
+  
 }
 
-a.router-link-exact-active {
-  text-decoration: underline;
+/* 링크에 커서 올라갔을 때 */
+a:hover { 
+  color: #42b883;
 }
 
-/* Router Transition */
+a .router-link-exact-active {
+  text-decoration: none;
+}
+
 .fade-enter-active .fade-leave-active {
   transition: opacity .5s;
 }
@@ -73,5 +74,6 @@ a.router-link-exact-active {
 .fade-enter .fade-leave-to {
   opacity: 0;
 }
+
 
 </style>
